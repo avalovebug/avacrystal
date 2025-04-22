@@ -165,7 +165,7 @@ ItemNames::
 	li "LIGHT BALL"
 	li "FRIEND BALL"
 	li "MOON BALL"
-	li "LOVE BALL"
+	li "GAY BALL"
 	li "NORMAL BOX"
 	li "GORGEOUS BOX"
 	li "SUN STONE"

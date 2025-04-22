@@ -894,7 +894,7 @@ MoonBallDesc:
 
 LoveBallDesc:
 	db   "For catching the"
-	next "opposite gender.@"
+	next "same gender.@"
 
 NormalBoxDesc:
 	db   "Open it and see"
