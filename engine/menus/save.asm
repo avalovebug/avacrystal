@@ -10,7 +10,7 @@ SaveMenu:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavedTheGame
+	call _SavingDontTurnOffThePower
 	call ResumeGameLogic
 	call ExitMenu
 	and a
@@ -46,6 +46,7 @@ ChangeBoxSaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
+	call SavingDontTurnOffThePower
 	call SaveBox
 	pop de
 	ld a, e
@@ -63,7 +64,7 @@ Link_SaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavedTheGame
+	call _SavingDontTurnOffThePower
 	call ResumeGameLogic
 	and a
 
@@ -108,7 +109,10 @@ MoveMonWOMail_InsertMon_SaveGame:
 	call LoadBox
 	call ResumeGameLogic
 	ld de, SFX_SAVE
-	jp PlaySFX
+	call PlaySFX
+	ld c, 24
+	call DelayFrames
+	ret
 
 StartMoveMonWOMail_SaveGame:
 	ld hl, MoveMonWOMailSaveText
@@ -119,7 +123,7 @@ StartMoveMonWOMail_SaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavedTheGame
+	call _SavingDontTurnOffThePower
 	call ResumeGameLogic
 	and a
 	ret
@@ -168,6 +172,10 @@ AddHallOfFameEntry:
 		"sGSBallFlagBackup is no longer located at 01:be44."
 	vc_assert GS_BALL_AVAILABLE == $b, \
 		"GS_BALL_AVAILABLE is no longer equal to $b."
+	ret
+
+SaveGameData:
+	call _SaveGameData
 	ret
 
 AskOverwriteSaveFile:
@@ -228,20 +236,18 @@ CompareLoadedAndSavedPlayerID:
 	cp c
 	ret
 
+_SavingDontTurnOffThePower:
+	call SavingDontTurnOffThePower
 SavedTheGame:
-	ld hl, wOptions
-	set NO_TEXT_SCROLL, [hl]
-	push hl
-	ld hl, .saving_text
-	call PrintText
-	pop hl
-	res NO_TEXT_SCROLL, [hl]
-	call SaveGameData
+	call _SaveGameData
+	; wait 32 frames
+	ld c, 32
+	call DelayFrames
 	; copy the original text speed setting to the stack
 	ld a, [wOptions]
 	push af
-	; set text speed to fast
-	ld a, TEXT_DELAY_FAST
+	; set text speed to medium
+	ld a, TEXT_DELAY_MED
 	ld [wOptions], a
 	; <PLAYER> saved the game!
 	ld hl, SavedTheGameText
@@ -251,13 +257,13 @@ SavedTheGame:
 	ld [wOptions], a
 	ld de, SFX_SAVE
 	call WaitPlaySFX
-	jp WaitSFX
-	
-.saving_text
-	text "SAVING…"
-	done
+	call WaitSFX
+	; wait 30 frames
+	ld c, 30
+	call DelayFrames
+	ret
 
-SaveGameData:
+_SaveGameData:
 	ld a, TRUE
 	ld [wSaveFileExists], a
 	farcall StageRTCTimeForSave
@@ -1095,6 +1101,10 @@ Checksum:
 
 WouldYouLikeToSaveTheGameText:
 	text_far _WouldYouLikeToSaveTheGameText
+	text_end
+
+SavingDontTurnOffThePowerText:
+	text_far _SavingDontTurnOffThePowerText
 	text_end
 
 SavedTheGameText:

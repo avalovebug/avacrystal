@@ -189,6 +189,11 @@ _WouldYouLikeToSaveTheGameText::
 	line "save the game?"
 	done
 
+_SavingDontTurnOffThePowerText::
+	text "SAVING… DON'T TURN"
+	line "OFF THE POWER."
+	done
+
 _SavedTheGameText::
 	text "<PLAYER> saved"
 	line "the game."
