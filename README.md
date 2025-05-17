@@ -35,7 +35,7 @@ changes to battle engine make this build incompatible with link battles with van
    - Metal Coat
 - All ghost-type moves are now special
 - All dark-type moves are now physical
-- Crunch lowers defense intead of special defense
+- Crunch lowers defense instead of special defense
 - Espeon can evolve by using a Sun Stone or by its original method
 - Umbreon can evolve by using a Moon Stone or by its original method
 - Phanpy & Donphan can learn Water Gun at Lv:4
