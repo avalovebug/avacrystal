@@ -399,18 +399,18 @@ KantoGrassWildMons:
 	; morn
 	db 15, RATTATA
 	db 15, SPEAROW
-	db 15, MANKEY
-	db 15, FEAROW
 	db 15, RATICATE
-	db 15, PRIMEAPE
+	db 15, FEAROW
+	db 15, FEAROW
+	db 18, MAROWAK
 	db 18, MAROWAK
 	; day
 	db 15, RATTATA
 	db 15, SPEAROW
-	db 15, MANKEY
-	db 15, FEAROW
 	db 15, RATICATE
-	db 15, PRIMEAPE
+	db 15, FEAROW
+	db 15, FEAROW
+	db 18, MAROWAK
 	db 18, MAROWAK
 	; nite
 	db 15, RATTATA
@@ -418,7 +418,7 @@ KantoGrassWildMons:
 	db 15, RATICATE
 	db 15, VENOMOTH
 	db 15, ZUBAT
-	db 15, PRIMEAPE
+	db 18, RATICATE
 	db 18, RATICATE
 	end_grass_wildmons
 
