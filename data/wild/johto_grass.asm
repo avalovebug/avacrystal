@@ -1547,8 +1547,8 @@ JohtoGrassWildMons:
 	; morn
 	db 13, EKANS
 	db 14, SPEAROW
-	db 15, RATTATA
 	db 13, MAREEP
+	db 15, FLAAFFY
 	db 15, ARBOK
 	db 15, MANKEY
 	db 16, FEAROW
