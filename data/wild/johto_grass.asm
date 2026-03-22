@@ -1326,7 +1326,7 @@ JohtoGrassWildMons:
 	db 7, BELLSPROUT
 	db 6, HOPPIP
 	db 7, PIDGEY
-	db 6, MAREEP
+	db 7, HOPPIP
 	db 7, HOPPIP
 	; day
 	db 4, EKANS
@@ -1334,7 +1334,7 @@ JohtoGrassWildMons:
 	db 7, BELLSPROUT
 	db 6, HOPPIP
 	db 7, PIDGEY
-	db 6, MAREEP
+	db 7, HOPPIP
 	db 7, HOPPIP
 	; nite
 	db 4, WOOPER
