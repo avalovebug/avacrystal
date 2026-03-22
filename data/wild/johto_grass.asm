@@ -1579,7 +1579,7 @@ JohtoGrassWildMons:
 	db 15, FURRET
 	db 17, RATICATE
 	db 17, FURRET
-	db 17, FURRET
+	db 15, MAREEP
 	; day
 	db 15, SENTRET
 	db 16, PIDGEOTTO
@@ -1587,7 +1587,7 @@ JohtoGrassWildMons:
 	db 15, FURRET
 	db 17, RATICATE
 	db 17, FURRET
-	db 17, FURRET
+	db 15, MAREEP
 	; nite
 	db 15, VENONAT
 	db 16, NOCTOWL
