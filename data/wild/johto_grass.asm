@@ -1550,7 +1550,7 @@ JohtoGrassWildMons:
 	db 13, MAREEP
 	db 15, FLAAFFY
 	db 15, ARBOK
-	db 15, MANKEY
+	db 16, FEAROW
 	db 16, FEAROW
 	; day
 	db 13, EKANS
@@ -1558,7 +1558,7 @@ JohtoGrassWildMons:
 	db 15, RATTATA
 	db 13, MAREEP
 	db 15, ARBOK
-	db 15, MANKEY
+	db 16, FEAROW
 	db 16, FEAROW
 	; nite
 	db 13, RATTATA
@@ -1566,7 +1566,7 @@ JohtoGrassWildMons:
 	db 15, RATICATE
 	db 16, GOLBAT
 	db 15, MARILL
-	db 15, MANKEY
+	db 16, GOLBAT
 	db 16, GOLBAT
 	end_grass_wildmons
 
